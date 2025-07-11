@@ -238,7 +238,7 @@ struct OperandSignature {
   //! \name Members
   //! \{
 
-  uint32_t _bits;
+  uint32_t _bits{0};
 
   //! \}
 
@@ -523,7 +523,7 @@ struct Operand_ {
   //! Provides operand type and additional payload.
   Signature _signature;
   //! Either base id as used by memory operand or any id as used by others.
-  uint32_t _baseId;
+  uint32_t _baseId{0};
 
   //! Data specific to the operand type.
   //!
