@@ -35,12 +35,12 @@
 // Global Dependencies
 // ===================
 
-#include <stdarg.h>
-#include <stddef.h>
-#include <stdint.h> // We really want std types as globals, not under 'std' namespace.
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdarg>
+#include <cstddef>
+#include <cstdint> // We really want std types as globals, not under 'std' namespace.
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 
 #include <initializer_list>
 #include <limits>

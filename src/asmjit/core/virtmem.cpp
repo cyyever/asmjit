@@ -12,7 +12,7 @@
 #include "../core/virtmem.h"
 
 #if !defined(_WIN32)
-  #include <errno.h>
+  #include <cerrno>
   #include <fcntl.h>
   #include <sys/mman.h>
   #include <sys/stat.h>
@@ -567,13 +567,12 @@ public:
     kFileTypeTmp
   };
 
-  int _fd;
-  FileType _fileType;
+  int _fd{-1};
+  FileType _fileType{kFileTypeNone};
   StringTmp<128> _tmpName;
 
   inline AnonymousMemory() noexcept
-    : _fd(-1),
-      _fileType(kFileTypeNone),
+    : 
       _tmpName() {}
 
   inline ~AnonymousMemory() noexcept {

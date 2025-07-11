@@ -1097,7 +1097,7 @@ public:
 
   //! Creates a cloned label operand of `other`.
   ASMJIT_INLINE_CONSTEXPR Label(const Label& other) noexcept
-    : Operand(other) {}
+     = default;
 
   //! Creates a label operand of the given `id`.
   ASMJIT_INLINE_CONSTEXPR explicit Label(uint32_t id) noexcept
@@ -1301,7 +1301,7 @@ public:
 
   //! Creates a new register operand which is the same as `other` .
   ASMJIT_INLINE_CONSTEXPR Reg(const Reg& other) noexcept
-    : Operand(other) {}
+     = default;
 
   //! Creates a new register operand compatible with `other`, but with a different `id`.
   ASMJIT_INLINE_CONSTEXPR Reg(const Reg& other, uint32_t id) noexcept
@@ -1954,7 +1954,7 @@ public:
 
   //! Creates a new register operand which is the same as `other` .
   ASMJIT_INLINE_CONSTEXPR BaseRegList(const BaseRegList& other) noexcept
-    : Operand(other) {}
+     = default;
 
   //! Creates a new register operand compatible with `other`, but with a different `id`.
   ASMJIT_INLINE_CONSTEXPR BaseRegList(const BaseRegList& other, RegMask regMask) noexcept
@@ -2188,7 +2188,7 @@ public:
 
   //! Creates a `BaseMem` operand that is a clone of `other`.
   ASMJIT_INLINE_CONSTEXPR BaseMem(const BaseMem& other) noexcept
-    : Operand(other) {}
+     = default;
 
   //! Creates a `BaseMem` operand from `baseReg` and `offset`.
   //!
@@ -2465,7 +2465,7 @@ public:
 
   //! Creates a new immediate value from `other`.
   ASMJIT_INLINE_CONSTEXPR Imm(const Imm& other) noexcept
-    : Operand(other) {}
+     = default;
 
   //! Creates a new immediate value from ARM/AArch64 specific `shift`.
   ASMJIT_INLINE_CONSTEXPR Imm(const arm::Shift& shift) noexcept
@@ -2479,7 +2479,7 @@ public:
   //! to `predicate`.
   //!
   //! \note Predicate is currently only used by ARM architectures.
-  template<typename T, typename = typename std::enable_if<IsConstexprConstructibleAsImmType<std::decay_t<T>>::value>::type>
+  template<typename T, typename = std::enable_if_t<IsConstexprConstructibleAsImmType<std::decay_t<T>>::value>>
   ASMJIT_INLINE_CONSTEXPR Imm(const T& val, const uint32_t predicate = 0) noexcept
     : Operand(Globals::Init,
               Signature::fromOpType(OperandType::kImm) | Signature::fromPredicate(predicate),

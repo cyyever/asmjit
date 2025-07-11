@@ -17,7 +17,7 @@ ASMJIT_BEGIN_NAMESPACE
 
 Logger::Logger() noexcept
   : _options() {}
-Logger::~Logger() noexcept {}
+Logger::~Logger() noexcept = default;
 
 // [[pure virtual]]
 Error Logger::_log(const char* data, size_t size) noexcept {
@@ -49,7 +49,7 @@ Error Logger::logv(const char* fmt, va_list ap) noexcept {
 
 FileLogger::FileLogger(FILE* file) noexcept
   : _file(file) {}
-FileLogger::~FileLogger() noexcept {}
+FileLogger::~FileLogger() noexcept = default;
 
 Error FileLogger::_log(const char* data, size_t size) noexcept {
   if (!_file) {
@@ -67,8 +67,8 @@ Error FileLogger::_log(const char* data, size_t size) noexcept {
 // StringLogger - Implementation
 // =============================
 
-StringLogger::StringLogger() noexcept {}
-StringLogger::~StringLogger() noexcept {}
+StringLogger::StringLogger() noexcept = default;
+StringLogger::~StringLogger() noexcept = default;
 
 Error StringLogger::_log(const char* data, size_t size) noexcept {
   return _content.append(data, size);

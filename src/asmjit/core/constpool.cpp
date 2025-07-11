@@ -13,7 +13,7 @@ ASMJIT_BEGIN_NAMESPACE
 // ======================================
 
 ConstPool::ConstPool(Zone* zone) noexcept { reset(zone); }
-ConstPool::~ConstPool() noexcept {}
+ConstPool::~ConstPool() noexcept = default;
 
 // ConstPool - Reset
 // =================
@@ -228,8 +228,8 @@ void ConstPool::fill(void* dst) const noexcept {
   memset(dst, 0, _size);
 
   ConstPoolFill filler(static_cast<uint8_t*>(dst), 1);
-  for (size_t i = 0; i < ASMJIT_ARRAY_SIZE(_tree); i++) {
-    _tree[i].forEach(filler);
+  for (const auto & e : _tree) {
+    e.forEach(filler);
     filler._dataSize <<= 1;
   }
 }

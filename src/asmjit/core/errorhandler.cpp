@@ -8,8 +8,8 @@
 
 ASMJIT_BEGIN_NAMESPACE
 
-ErrorHandler::ErrorHandler() noexcept {}
-ErrorHandler::~ErrorHandler() noexcept {}
+ErrorHandler::ErrorHandler() noexcept = default;
+ErrorHandler::~ErrorHandler() noexcept = default;
 
 void ErrorHandler::handleError(Error err, const char* message, BaseEmitter* origin) {
   DebugUtils::unused(err, message, origin);

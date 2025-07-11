@@ -20,9 +20,9 @@
 #if ASMJIT_ARCH_X86 && !defined(ASMJIT_NO_X86) && !defined(ASMJIT_NO_JIT)
 
 #include <asmjit/x86.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 
 using namespace asmjit;
 

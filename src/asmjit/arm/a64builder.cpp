@@ -23,7 +23,7 @@ Builder::Builder(CodeHolder* code) noexcept : BaseBuilder() {
     code->attach(this);
   }
 }
-Builder::~Builder() noexcept {}
+Builder::~Builder() noexcept = default;
 
 // a64::Builder - Events
 // =====================

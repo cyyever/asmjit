@@ -106,7 +106,7 @@ public:
   //! \name Construction & Destruction
   //! \{
 
-  ASMJIT_INLINE_NODEBUG ZoneStackBase() noexcept {}
+  ASMJIT_INLINE_NODEBUG ZoneStackBase() noexcept = default;
   ASMJIT_INLINE_NODEBUG ~ZoneStackBase() noexcept { reset(); }
 
   ASMJIT_INLINE_NODEBUG bool isInitialized() const noexcept { return _allocator != nullptr; }
@@ -162,8 +162,8 @@ public:
   //! \name Construction & Destruction
   //! \{
 
-  inline ZoneStack() noexcept {}
-  inline ~ZoneStack() noexcept {}
+  inline ZoneStack() noexcept = default;
+  inline ~ZoneStack() noexcept = default;
 
   inline Error init(ZoneAllocator* allocator) noexcept { return _init(allocator, kMidBlockIndex); }
 

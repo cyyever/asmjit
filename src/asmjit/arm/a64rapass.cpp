@@ -630,7 +630,7 @@ Error RACFGBuilder::onRet(FuncRetNode* funcRet, RAInstBuilder& ib) noexcept {
 
 ARMRAPass::ARMRAPass() noexcept
   : BaseRAPass() { _iEmitHelper = &_emitHelper; }
-ARMRAPass::~ARMRAPass() noexcept {}
+ARMRAPass::~ARMRAPass() noexcept = default;
 
 // a64::ARMRAPass - OnInit / OnDone
 // ================================

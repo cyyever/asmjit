@@ -1016,7 +1016,7 @@ public:
   //! \name Construction & Destruction
   //! \{
 
-  ASMJIT_INLINE_NODEBUG CpuFeatures() noexcept {}
+  ASMJIT_INLINE_NODEBUG CpuFeatures() noexcept = default;
   ASMJIT_INLINE_NODEBUG CpuFeatures(const CpuFeatures& other) noexcept = default;
   ASMJIT_INLINE_NODEBUG explicit CpuFeatures(const Data& other) noexcept : _data{other._bits} {}
   ASMJIT_INLINE_NODEBUG explicit CpuFeatures(Globals::NoInit_) noexcept {}
@@ -1148,7 +1148,7 @@ public:
   //! \{
 
   //! Creates a new CpuInfo instance.
-  ASMJIT_INLINE_NODEBUG CpuInfo() noexcept {}
+  ASMJIT_INLINE_NODEBUG CpuInfo() noexcept = default;
   //! Creates a copy of `other` instance.
   ASMJIT_INLINE_NODEBUG CpuInfo(const CpuInfo& other) noexcept = default;
 

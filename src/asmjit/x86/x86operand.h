@@ -706,7 +706,7 @@ public:
     : BaseMem() {}
 
   ASMJIT_INLINE_CONSTEXPR Mem(const Mem& other) noexcept
-    : BaseMem(other) {}
+     = default;
 
   ASMJIT_INLINE_NODEBUG explicit Mem(Globals::NoInit_) noexcept
     : BaseMem(Globals::NoInit) {}

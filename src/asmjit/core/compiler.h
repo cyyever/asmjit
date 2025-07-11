@@ -437,11 +437,11 @@ public:
   //! Function frame.
   FuncFrame _frame;
   //! Function exit label.
-  LabelNode* _exitNode;
+  LabelNode* _exitNode{nullptr};
   //! Function end (sentinel).
-  SentinelNode* _end;
+  SentinelNode* _end{nullptr};
   //! Argument packs.
-  ArgPack* _args;
+  ArgPack* _args{nullptr};
 
   //! \}
 
@@ -454,10 +454,8 @@ public:
   inline explicit FuncNode(uint32_t labelId = Globals::kInvalidId) noexcept
     : LabelNode(labelId),
       _funcDetail(),
-      _frame(),
-      _exitNode(nullptr),
-      _end(nullptr),
-      _args(nullptr) {
+      _frame()
+      {
     _setType(NodeType::kFunc);
   }
 
@@ -617,7 +615,7 @@ public:
   //! Function return value(s).
   OperandPack _rets;
   //! Function arguments.
-  OperandPack* _args;
+  OperandPack* _args{nullptr};
 
   //! \}
 
@@ -627,8 +625,8 @@ public:
   //! Creates a new `InvokeNode` instance.
   inline InvokeNode(InstId instId, InstOptions options) noexcept
     : InstNodeWithOperands(instId, options, 0),
-      _funcDetail(),
-      _args(nullptr) {
+      _funcDetail()
+      {
     _setType(NodeType::kInvoke);
     _resetOps();
     _rets.reset();

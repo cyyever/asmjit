@@ -4,9 +4,9 @@
 // SPDX-License-Identifier: Zlib
 
 #include <asmjit/core.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 
 #include "asmjitutils.h"
 #include "cmdline.h"

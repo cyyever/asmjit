@@ -448,7 +448,7 @@ struct RALiveInterval {
 
   ASMJIT_INLINE_NODEBUG RALiveInterval() noexcept : a(0), b(0) {}
   ASMJIT_INLINE_NODEBUG RALiveInterval(uint32_t a, uint32_t b) noexcept : a(a), b(b) {}
-  ASMJIT_INLINE_NODEBUG RALiveInterval(const RALiveInterval& other) noexcept : a(other.a), b(other.b) {}
+  ASMJIT_INLINE_NODEBUG RALiveInterval(const RALiveInterval& other) noexcept  = default;
 
   ASMJIT_INLINE_NODEBUG void init(uint32_t aVal, uint32_t bVal) noexcept {
     a = aVal;

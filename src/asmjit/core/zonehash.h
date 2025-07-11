@@ -21,16 +21,16 @@ public:
   ASMJIT_NONCOPYABLE(ZoneHashNode)
 
   inline ZoneHashNode(uint32_t hashCode = 0) noexcept
-    : _hashNext(nullptr),
-      _hashCode(hashCode),
-      _customData(0) {}
+    : 
+      _hashCode(hashCode)
+      {}
 
   //! Next node in the chain, null if it terminates the chain.
-  ZoneHashNode* _hashNext;
+  ZoneHashNode* _hashNext{nullptr};
   //! Precalculated hash-code of key.
   uint32_t _hashCode;
   //! Padding, can be reused by any Node that inherits `ZoneHashNode`.
-  uint32_t _customData;
+  uint32_t _customData{0};
 };
 
 //! Base class used by \ref ZoneHash template

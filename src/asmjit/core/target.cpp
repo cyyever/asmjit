@@ -11,6 +11,6 @@ ASMJIT_BEGIN_NAMESPACE
 Target::Target() noexcept
   : _environment{},
     _cpuFeatures{} {}
-Target::~Target() noexcept {}
+Target::~Target() noexcept = default;
 
 ASMJIT_END_NAMESPACE

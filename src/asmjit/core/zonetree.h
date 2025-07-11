@@ -40,7 +40,7 @@ public:
   //! \name Construction & Destruction
   //! \{
 
-  ASMJIT_INLINE_NODEBUG ZoneTreeNode() noexcept {}
+  ASMJIT_INLINE_NODEBUG ZoneTreeNode() noexcept = default;
 
   //! \}
 
@@ -142,7 +142,7 @@ public:
   //! \name Construction & Destruction
   //! \{
 
-  ASMJIT_INLINE_NODEBUG ZoneTree() noexcept {}
+  ASMJIT_INLINE_NODEBUG ZoneTree() noexcept = default;
   ASMJIT_INLINE_NODEBUG ZoneTree(ZoneTree&& other) noexcept
     : _root(other._root) {}
   ASMJIT_INLINE_NODEBUG void reset() noexcept { _root = nullptr; }

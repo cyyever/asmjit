@@ -919,7 +919,7 @@ public:
   //! \{
 
   //! Creates a default constructed \ref FuncDetail.
-  ASMJIT_INLINE_NODEBUG FuncDetail() noexcept {}
+  ASMJIT_INLINE_NODEBUG FuncDetail() noexcept = default;
 
   //! Copy constructor.
   //!

@@ -608,7 +608,7 @@ public:
   //! \name Construction & Destruction
   //! \{
 
-  ASMJIT_INLINE_NODEBUG ZoneBitVector() noexcept {}
+  ASMJIT_INLINE_NODEBUG ZoneBitVector() noexcept = default;
 
   ASMJIT_INLINE_NODEBUG ZoneBitVector(ZoneBitVector&& other) noexcept
     : _data(other._data),

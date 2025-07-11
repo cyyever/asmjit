@@ -446,7 +446,7 @@ public:
   //! Creates a new `ZoneAllocator`.
   //!
   //! \note To use it, you must first `init()` it.
-  ASMJIT_INLINE_NODEBUG ZoneAllocator() noexcept {}
+  ASMJIT_INLINE_NODEBUG ZoneAllocator() noexcept = default;
 
   //! Creates a new `ZoneAllocator` initialized to use `zone`.
   ASMJIT_INLINE_NODEBUG explicit ZoneAllocator(Zone* zone) noexcept

@@ -20,7 +20,7 @@ ASMJIT_BEGIN_NAMESPACE
 BaseAssembler::BaseAssembler() noexcept
   : BaseEmitter(EmitterType::kAssembler) {}
 
-BaseAssembler::~BaseAssembler() noexcept {}
+BaseAssembler::~BaseAssembler() noexcept = default;
 
 // BaseAssembler - Buffer Management
 // =================================

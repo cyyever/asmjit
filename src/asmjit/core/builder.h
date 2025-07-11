@@ -137,7 +137,7 @@ public:
   //! \name Construction & Destruction
   //! \{
 
-  ASMJIT_INLINE_NODEBUG NodeList() noexcept {}
+  ASMJIT_INLINE_NODEBUG NodeList() noexcept = default;
 
   ASMJIT_INLINE_NODEBUG NodeList(BaseNode* first, BaseNode* last) noexcept
     : _first(first),
@@ -1183,7 +1183,7 @@ public:
   //! This link is only valid when the section is active (is part of the code) and when `Builder::hasDirtySectionLinks()`
   //! returns `false`. If you intend to use this field you should always call `Builder::updateSectionLinks()` before you
   //! do so.
-  SectionNode* _nextSection;
+  SectionNode* _nextSection{nullptr};
 
   //! \}
 
@@ -1193,8 +1193,8 @@ public:
   //! Creates a new `SectionNode` instance.
   ASMJIT_INLINE_NODEBUG explicit SectionNode(uint32_t sectionId = 0) noexcept
     : BaseNode(NodeType::kSection, NodeFlags::kHasNoEffect),
-      _sectionId(sectionId),
-      _nextSection(nullptr) {}
+      _sectionId(sectionId)
+      {}
 
   //! \}
 

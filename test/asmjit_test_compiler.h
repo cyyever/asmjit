@@ -13,16 +13,15 @@
 
 class SimpleErrorHandler : public asmjit::ErrorHandler {
 public:
-  SimpleErrorHandler()
-    : _err(asmjit::kErrorOk) {}
+  SimpleErrorHandler() = default;
 
-  virtual void handleError(asmjit::Error err, const char* message, asmjit::BaseEmitter* origin) {
+  void handleError(asmjit::Error err, const char* message, asmjit::BaseEmitter* origin) override {
     asmjit::DebugUtils::unused(origin);
     _err = err;
     _message.assign(message);
   }
 
-  asmjit::Error _err;
+  asmjit::Error _err{asmjit::kErrorOk};
   asmjit::String _message;
 };
 
@@ -35,7 +34,7 @@ public:
     _arch = arch;
   }
 
-  virtual ~TestCase() {}
+  virtual ~TestCase() = default;
 
   inline const char* name() const { return _name.data(); }
   inline asmjit::Arch arch() const { return _arch; }
@@ -64,7 +63,7 @@ public:
 
   TestApp() noexcept
     : _arch("all") {}
-  ~TestApp() noexcept {}
+  ~TestApp() noexcept = default;
 
   void add(TestCase* test) noexcept {
     _tests.push_back(std::unique_ptr<TestCase>(test));

@@ -546,7 +546,7 @@ Assembler::Assembler(CodeHolder* code) noexcept : BaseAssembler() {
     code->attach(this);
   }
 }
-Assembler::~Assembler() noexcept {}
+Assembler::~Assembler() noexcept = default;
 
 // x86::Assembler - Emit (Low-Level)
 // =================================

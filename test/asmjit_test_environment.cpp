@@ -35,7 +35,7 @@ static void printAppInfo() {
 const char* stringifyBool(bool b) noexcept { return b ? "true" : "false"; };
 const char* stringifyResult(Error err) noexcept { return err == kErrorOk ? "success" : DebugUtils::errorAsString(err); };
 
-using VoidFunc = void (ASMJIT_CDECL*)(void);
+using VoidFunc = void (ASMJIT_CDECL*)();
 
 #if !defined(ASMJIT_NO_JIT)
 

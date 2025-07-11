@@ -35,17 +35,17 @@ namespace Internal {
   template<typename T, size_t Alignment>
   struct AliasedUInt {};
 
-  template<> struct AliasedUInt<uint8_t, 1> { typedef uint8_t Type; };
-  template<> struct AliasedUInt<uint16_t, 2> { typedef uint16_t ASMJIT_MAY_ALIAS Type; };
-  template<> struct AliasedUInt<uint32_t, 4> { typedef uint32_t ASMJIT_MAY_ALIAS Type; };
-  template<> struct AliasedUInt<uint64_t, 8> { typedef uint64_t ASMJIT_MAY_ALIAS Type; };
+  template<> struct AliasedUInt<uint8_t, 1> { using Type = uint8_t; };
+  template<> struct AliasedUInt<uint16_t, 2> { using Type = uint16_t; };
+  template<> struct AliasedUInt<uint32_t, 4> { using Type = uint32_t; };
+  template<> struct AliasedUInt<uint64_t, 8> { using Type = uint64_t; };
 
-  template<> struct AliasedUInt<uint16_t, 1> { typedef uint16_t ASMJIT_MAY_ALIAS ASMJIT_ALIGN_TYPE(1, Type); };
-  template<> struct AliasedUInt<uint32_t, 1> { typedef uint32_t ASMJIT_MAY_ALIAS ASMJIT_ALIGN_TYPE(1, Type); };
-  template<> struct AliasedUInt<uint32_t, 2> { typedef uint32_t ASMJIT_MAY_ALIAS ASMJIT_ALIGN_TYPE(2, Type); };
-  template<> struct AliasedUInt<uint64_t, 1> { typedef uint64_t ASMJIT_MAY_ALIAS ASMJIT_ALIGN_TYPE(1, Type); };
-  template<> struct AliasedUInt<uint64_t, 2> { typedef uint64_t ASMJIT_MAY_ALIAS ASMJIT_ALIGN_TYPE(2, Type); };
-  template<> struct AliasedUInt<uint64_t, 4> { typedef uint64_t ASMJIT_MAY_ALIAS ASMJIT_ALIGN_TYPE(4, Type); };
+  template<> struct AliasedUInt<uint16_t, 1> { using Type = uint16_t; };
+  template<> struct AliasedUInt<uint32_t, 1> { using Type = uint32_t; };
+  template<> struct AliasedUInt<uint32_t, 2> { using Type = uint32_t; };
+  template<> struct AliasedUInt<uint64_t, 1> { using Type = uint64_t; };
+  template<> struct AliasedUInt<uint64_t, 2> { using Type = uint64_t; };
+  template<> struct AliasedUInt<uint64_t, 4> { using Type = uint64_t; };
 
   // StdInt    - Make an int-type by size (signed or unsigned) that is the
   //             same as types defined by <stdint.h>.

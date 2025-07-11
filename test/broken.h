@@ -44,7 +44,7 @@
 namespace BrokenAPI {
 
 //! Entry point of a unit test defined by `UNIT` macro.
-typedef void (*Entry)(void);
+using Entry = void (*)(void);
 
 enum Flags : unsigned {
   kFlagFinished = 0x1

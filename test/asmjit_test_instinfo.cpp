@@ -9,7 +9,7 @@
   #include <asmjit/x86.h>
 #endif
 
-#include <stdio.h>
+#include <cstdio>
 #include "asmjitutils.h"
 
 using namespace asmjit;

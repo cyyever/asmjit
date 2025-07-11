@@ -87,7 +87,7 @@ public:
   //! \name Construction & Destruction
   //! \{
 
-  ASMJIT_INLINE_NODEBUG ZoneList() noexcept {}
+  ASMJIT_INLINE_NODEBUG ZoneList() noexcept = default;
 
   ASMJIT_INLINE_NODEBUG ZoneList(ZoneList&& other) noexcept
     : _nodes { other._nodes[0], other._nodes[1] } {}

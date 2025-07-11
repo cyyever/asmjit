@@ -269,10 +269,7 @@ public:
       _blockSize(blockSize),
       _flags(blockFlags),
       _areaSize(areaSize),
-      _areaUsed(0),          // Will be initialized by clearBlock().
-      _largestUnusedArea(0), // Will be initialized by clearBlock().
-      _searchStart(0),       // Will be initialized by clearBlock().
-      _searchEnd(0),         // Will be initialized by clearBlock().
+               // Will be initialized by clearBlock().
       _usedBitVector(usedBitVector),
       _stopBitVector(stopBitVector) {
 
@@ -473,9 +470,9 @@ public:
   //! Lock for thread safety.
   mutable Lock lock;
   //! System page size (also a minimum block size).
-  uint32_t pageSize;
+  uint32_t pageSize{0};
   //! Number of active allocations.
-  size_t allocationCount;
+  size_t allocationCount{0};
 
   //! Blocks from all pools in RBTree.
   ZoneTree<JitAllocatorBlock> tree;
@@ -488,11 +485,10 @@ public:
 
   ASMJIT_INLINE JitAllocatorPrivateImpl(JitAllocatorPool* pools, size_t poolCount) noexcept
     : JitAllocator::Impl {},
-      pageSize(0),
-      allocationCount(0),
+      
       pools(pools),
       poolCount(poolCount) {}
-  ASMJIT_INLINE ~JitAllocatorPrivateImpl() noexcept {}
+  ASMJIT_INLINE ~JitAllocatorPrivateImpl() noexcept = default;
 };
 
 static const JitAllocator::Impl JitAllocatorImpl_none {};

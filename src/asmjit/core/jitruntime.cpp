@@ -18,7 +18,7 @@ JitRuntime::JitRuntime(const JitAllocator::CreateParams* params) noexcept
   _cpuFeatures = CpuInfo::host().features();
 }
 
-JitRuntime::~JitRuntime() noexcept {}
+JitRuntime::~JitRuntime() noexcept = default;
 
 Error JitRuntime::_add(void** dst, CodeHolder* code) noexcept {
   *dst = nullptr;

@@ -21,7 +21,7 @@ using namespace asmjit;
 #define DUMP_TYPE(...) \
   printf("  %-26s: %u\n", #__VA_ARGS__, uint32_t(sizeof(__VA_ARGS__)))
 
-static void printTypeSizes(void) noexcept {
+static void printTypeSizes() noexcept {
   printf("Size of C++ types:\n");
     DUMP_TYPE(int8_t);
     DUMP_TYPE(int16_t);
@@ -135,7 +135,7 @@ static void printTypeSizes(void) noexcept {
 
 #undef DUMP_TYPE
 
-static void onBeforeRun(void) noexcept {
+static void onBeforeRun() noexcept {
   printBuildOptions();
   printCpuInfo();
   printTypeSizes();

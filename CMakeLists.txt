@@ -11,6 +11,8 @@ include(CheckCXXCompilerFlag)
 include(CheckCXXSourceCompiles)
 include(GNUInstallDirs)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # AsmJit - Configuration - Build
 # ==============================
 

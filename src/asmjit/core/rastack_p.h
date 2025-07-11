@@ -140,7 +140,7 @@ public:
   //! \name Construction & Destruction
   //! \{
 
-  ASMJIT_INLINE_NODEBUG RAStackAllocator() noexcept {}
+  ASMJIT_INLINE_NODEBUG RAStackAllocator() noexcept = default;
 
   ASMJIT_INLINE_NODEBUG void reset(Zone* zone, ZoneAllocator* allocator) noexcept {
     _zone = zone;

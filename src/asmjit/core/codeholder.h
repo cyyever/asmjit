@@ -332,7 +332,7 @@ public:
   //! Address.
   uint64_t _address;
   //! Slot.
-  uint32_t _slot;
+  uint32_t _slot{0xFFFFFFFFu};
 
   //! \}
 
@@ -340,8 +340,8 @@ public:
   //! \{
 
   ASMJIT_INLINE_NODEBUG explicit AddressTableEntry(uint64_t address) noexcept
-    : _address(address),
-      _slot(0xFFFFFFFFu) {}
+    : _address(address)
+      {}
 
   //! \}
 

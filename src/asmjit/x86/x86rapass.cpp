@@ -1267,7 +1267,7 @@ Error RACFGBuilder::onRet(FuncRetNode* funcRet, RAInstBuilder& ib) noexcept {
 
 X86RAPass::X86RAPass() noexcept
   : BaseRAPass() { _iEmitHelper = &_emitHelper; }
-X86RAPass::~X86RAPass() noexcept {}
+X86RAPass::~X86RAPass() noexcept = default;
 
 // x86::X86RAPass - OnInit & OnDone
 // ================================

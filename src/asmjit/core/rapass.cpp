@@ -52,7 +52,7 @@ Error RABlock::prependSuccessor(RABlock* successor) noexcept {
 // =======================================
 
 BaseRAPass::BaseRAPass() noexcept : FuncPass("BaseRAPass") {}
-BaseRAPass::~BaseRAPass() noexcept {}
+BaseRAPass::~BaseRAPass() noexcept = default;
 
 // BaseRAPass - RunOnFunction
 // ==========================

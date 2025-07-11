@@ -1,4 +1,4 @@
-#include <stdint.h>
+#include <cstdint>
 #include <asmjit/host.h>
 
 #include "asmjitutils.h"
@@ -161,7 +161,7 @@ static inline void bench_assembler_func_rt(InitStrategy strategy, size_t count) 
   AssemblerT a;
   MyErrorHandler eh;
 
-  using Func = uint32_t(*)(void);
+  using Func = uint32_t(*)();
 
   if (strategy == InitStrategy::kInitReset) {
     for (size_t i = 0; i < count; i++) {
@@ -264,7 +264,7 @@ static inline void bench_builder_func_finalize_rt(InitStrategy strategy, size_t 
   BuilderT b;
   MyErrorHandler eh;
 
-  using Func = uint32_t(*)(void);
+  using Func = uint32_t(*)();
 
   if (strategy == InitStrategy::kInitReset) {
     for (size_t i = 0; i < count; i++) {
@@ -376,7 +376,7 @@ static inline void bench_compiler_func_rt(InitStrategy strategy, size_t count) {
   CompilerT cc;
   MyErrorHandler eh;
 
-  using Func = uint32_t(*)(void);
+  using Func = uint32_t(*)();
 
   if (strategy == InitStrategy::kInitReset) {
     for (size_t i = 0; i < count; i++) {

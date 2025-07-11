@@ -5,9 +5,9 @@
 
 #include <asmjit/core.h>
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 
 #include <memory>
 #include <vector>
@@ -245,12 +245,12 @@ int TestApp::run() {
 
 #ifndef ASMJIT_NO_X86
       if (code.arch() == Arch::kX86 || code.arch() == Arch::kX64)
-        cc = std::unique_ptr<x86::Compiler>(new x86::Compiler(&code));
+        cc = std::make_unique<x86::Compiler>(&code);
 #endif // !ASMJIT_NO_X86
 
 #ifndef ASMJIT_NO_AARCH64
       if (code.arch() == Arch::kAArch64)
-        cc = std::unique_ptr<a64::Compiler>(new a64::Compiler(&code));
+        cc = std::make_unique<a64::Compiler>(&code);
 #endif // !ASMJIT_NO_AARCH64
 
       if (!cc)

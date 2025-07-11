@@ -56,7 +56,7 @@ BaseCompiler::BaseCompiler() noexcept
   _emitterType = EmitterType::kCompiler;
   _validationFlags = ValidationFlags::kEnableVirtRegs;
 }
-BaseCompiler::~BaseCompiler() noexcept {}
+BaseCompiler::~BaseCompiler() noexcept = default;
 
 // BaseCompiler - Function Management
 // ==================================

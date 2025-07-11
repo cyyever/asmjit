@@ -9,8 +9,8 @@
 #include <asmjit/a64.h>
 
 #include <limits>
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 
 #include "asmjit_bench_codegen.h"
 

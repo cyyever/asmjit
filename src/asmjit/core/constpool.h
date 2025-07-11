@@ -104,13 +104,13 @@ public:
     //! RB tree.
     ZoneTree<Node> _tree;
     //! Size of the tree (number of nodes).
-    size_t _size;
+    size_t _size{0};
     //! Size of the data.
     size_t _dataSize;
 
     ASMJIT_INLINE_NODEBUG explicit Tree(size_t dataSize = 0) noexcept
       : _tree(),
-        _size(0),
+        
         _dataSize(dataSize) {}
 
     ASMJIT_INLINE_NODEBUG void reset() noexcept {

@@ -24,7 +24,7 @@ Compiler::Compiler(CodeHolder* code) noexcept : BaseCompiler() {
     code->attach(this);
   }
 }
-Compiler::~Compiler() noexcept {}
+Compiler::~Compiler() noexcept = default;
 
 // a64::Compiler - Events
 // ======================

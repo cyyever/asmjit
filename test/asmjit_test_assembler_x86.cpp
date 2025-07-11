@@ -7,9 +7,9 @@
 #if !defined(ASMJIT_NO_X86)
 
 #include <asmjit/x86.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 
 #include "asmjit_test_assembler.h"
 #include "cmdline.h"

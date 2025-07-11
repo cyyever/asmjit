@@ -930,7 +930,7 @@ Error BaseBuilder::onReinit(CodeHolder& code) noexcept {
 
 Pass::Pass(const char* name) noexcept
   : _name(name) {}
-Pass::~Pass() noexcept {}
+Pass::~Pass() noexcept = default;
 
 // Pass - Interface
 // ================
