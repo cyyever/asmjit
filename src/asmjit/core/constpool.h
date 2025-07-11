@@ -218,7 +218,7 @@ public:
   //! Creates a new constant pool that would use `zone` as a memory allocator.
   ASMJIT_API explicit ConstPool(Zone* zone) noexcept;
   //! Destroys this constant pool.
-  ASMJIT_API ~ConstPool() noexcept;
+  ASMJIT_API ~ConstPool() noexcept = default;
 
   //! \}
 

@@ -164,6 +164,7 @@ void BenchRegAllocApp::emitCode_x86(x86::Compiler* cc, uint32_t complexity, uint
     used_labels.push_back(0u);
   }
 
+  vRegs.reserve(regCount);
   for (size_t i = 0; i < regCount; i++) {
     vRegs.push_back(cc->newXmmSd("v%u", unsigned(i)));
   }
@@ -208,7 +209,7 @@ void BenchRegAllocApp::emitCode_x86(x86::Compiler* cc, uint32_t complexity, uint
       uint32_t id2 = rnd.nextUInt32() % regCount;
 
       x86::Vec v0 = vRegs[id1];
-      x86::Vec v1 = vRegs[id1];
+      const x86::Vec& v1 = vRegs[id1];
       x86::Vec v2 = vRegs[id2];
 
       if (j < kLocalRegCount) {
@@ -260,6 +261,7 @@ void BenchRegAllocApp::emitCode_a64(a64::Compiler* cc, uint32_t complexity, uint
     used_labels.push_back(0u);
   }
 
+  vRegs.reserve(regCount);
   for (size_t i = 0; i < regCount; i++) {
     vRegs.push_back(cc->newVecD("v%u", unsigned(i)));
   }
@@ -304,7 +306,7 @@ void BenchRegAllocApp::emitCode_a64(a64::Compiler* cc, uint32_t complexity, uint
       uint32_t id2 = rnd.nextUInt32() % regCount;
 
       a64::Vec v0 = vRegs[id1];
-      a64::Vec v1 = vRegs[id1];
+      const a64::Vec& v1 = vRegs[id1];
       a64::Vec v2 = vRegs[id2];
 
       if (j < kLocalRegCount) {

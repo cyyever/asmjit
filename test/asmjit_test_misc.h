@@ -23,12 +23,12 @@ static void generateSseAlphaBlendInternal(
   const x86::Vec& simd0, const x86::Vec& simd1, const x86::Vec& simd2, const x86::Vec& simd3,
   const x86::Vec& simd4, const x86::Vec& simd5, const x86::Vec& simd6, const x86::Vec& simd7) {
 
-  x86::Gp i = n;
-  x86::Gp j = gp0;
+  const x86::Gp& i = n;
+  const x86::Gp& j = gp0;
 
-  x86::Vec vzero = simd0;
-  x86::Vec v0080 = simd1;
-  x86::Vec v0101 = simd2;
+  const x86::Vec& vzero = simd0;
+  const x86::Vec& v0080 = simd1;
+  const x86::Vec& v0101 = simd2;
 
   Label L_SmallLoop = cc.newLabel();
   Label L_SmallEnd  = cc.newLabel();
@@ -59,9 +59,9 @@ static void generateSseAlphaBlendInternal(
   // Small loop.
   cc.bind(L_SmallLoop);
   {
-    x86::Vec x0 = simd3;
-    x86::Vec y0 = simd4;
-    x86::Vec a0 = simd5;
+    const x86::Vec& x0 = simd3;
+    const x86::Vec& y0 = simd4;
+    const x86::Vec& a0 = simd5;
 
     cc.movd(y0, x86::ptr(src));
     cc.movd(x0, x86::ptr(dst));
@@ -104,11 +104,11 @@ static void generateSseAlphaBlendInternal(
   // Aligned loop.
   cc.bind(L_LargeLoop);
   {
-    x86::Vec x0 = simd3;
-    x86::Vec x1 = simd4;
-    x86::Vec y0 = simd5;
-    x86::Vec a0 = simd6;
-    x86::Vec a1 = simd7;
+    const x86::Vec& x0 = simd3;
+    const x86::Vec& x1 = simd4;
+    const x86::Vec& y0 = simd5;
+    const x86::Vec& a0 = simd6;
+    const x86::Vec& a1 = simd7;
 
     cc.movups(y0, x86::ptr(src));
     cc.movaps(x0, x86::ptr(dst));

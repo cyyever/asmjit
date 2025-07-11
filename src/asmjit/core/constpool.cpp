@@ -13,7 +13,7 @@ ASMJIT_BEGIN_NAMESPACE
 // ======================================
 
 ConstPool::ConstPool(Zone* zone) noexcept { reset(zone); }
-ConstPool::~ConstPool() noexcept = default;
+
 
 // ConstPool - Reset
 // =================
