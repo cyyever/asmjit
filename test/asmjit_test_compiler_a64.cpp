@@ -672,7 +672,7 @@ public:
 // a64::Compiler - Export
 // ======================
 
-void compiler_add_a64_tests(TestApp& app) {
+static void compiler_add_a64_tests(TestApp& app) {
   app.addT<A64Test_GpArgs>();
   app.addT<A64Test_ManyRegs>();
   app.addT<A64Test_Simd1>();

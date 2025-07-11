@@ -4033,7 +4033,7 @@ static void ASMJIT_NOINLINE testA64AssemblerExtras(AssemblerTester<a64::Assemble
   TEST_INSTRUCTION("C167074F", movi(v1.d2(), 0xFE000000FE000000));
 }
 
-bool testA64Assembler(const TestSettings& settings) noexcept {
+static bool testA64Assembler(const TestSettings& settings) noexcept {
   using namespace a64;
 
   AssemblerTester<Assembler> tester(Arch::kAArch64, settings);

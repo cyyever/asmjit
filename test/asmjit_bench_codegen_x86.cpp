@@ -5176,7 +5176,7 @@ static void benchmarkX86Function(Arch arch, uint32_t numIterations, const char* 
   printf("\n");
 }
 
-void benchmarkX86Emitters(uint32_t numIterations, bool testX86, bool testX64) {
+static void benchmarkX86Emitters(uint32_t numIterations, bool testX86, bool testX64) {
   uint32_t i = 0;
   uint32_t n = 0;
 

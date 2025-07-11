@@ -32,8 +32,8 @@ static void printAppInfo() {
   printf("\n");
 }
 
-const char* stringifyBool(bool b) noexcept { return b ? "true" : "false"; };
-const char* stringifyResult(Error err) noexcept { return err == kErrorOk ? "success" : DebugUtils::errorAsString(err); };
+static const char* stringifyBool(bool b) noexcept { return b ? "true" : "false"; };
+static const char* stringifyResult(Error err) noexcept { return err == kErrorOk ? "success" : DebugUtils::errorAsString(err); };
 
 using VoidFunc = void (ASMJIT_CDECL*)();
 

@@ -18035,7 +18035,7 @@ static void ASMJIT_NOINLINE testX64AssemblerExtras(AssemblerTester<x86::Assemble
   TEST_INSTRUCTION("0F01DF"                        , invlpga(rax, ecx));
 }
 
-bool testX64Assembler(const TestSettings& settings) noexcept {
+static bool testX64Assembler(const TestSettings& settings) noexcept {
   using namespace x86;
 
   AssemblerTester<Assembler> tester(Arch::kX64, settings);

@@ -8456,7 +8456,7 @@ static void ASMJIT_NOINLINE testX86AssemblerFailures(AssemblerTester<x86::Assemb
 }
 */
 
-bool testX86Assembler(const TestSettings& settings) noexcept {
+static bool testX86Assembler(const TestSettings& settings) noexcept {
   using namespace x86;
 
   AssemblerTester<Assembler> tester(Arch::kX86, settings);

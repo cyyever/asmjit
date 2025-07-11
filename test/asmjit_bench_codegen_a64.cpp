@@ -697,7 +697,7 @@ static void benchmarkA64Function(Arch arch, uint32_t numIterations, const char* 
   printf("\n");
 }
 
-void benchmarkA64Emitters(uint32_t numIterations) {
+static void benchmarkA64Emitters(uint32_t numIterations) {
   static const char description[] = "GpSequence (Sequence of GP instructions - reg/mem)";
   benchmarkA64Function(Arch::kAArch64, numIterations, description, [](BaseEmitter& emitter, bool emitPrologEpilog) {
     generateGpSequence(emitter, emitPrologEpilog);

@@ -4592,7 +4592,7 @@ public:
 // x86::Compiler - Tests
 // =====================
 
-void compiler_add_x86_tests(TestApp& app) {
+static void compiler_add_x86_tests(TestApp& app) {
   // Base tests.
   app.addT<X86Test_NoCode>();
   app.addT<X86Test_NoAlign>();
